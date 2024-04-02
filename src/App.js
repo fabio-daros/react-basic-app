@@ -39,6 +39,12 @@ class App extends Component {
     });
   }
 
+  removeComment = comment => {  // Interaction with the state. It is a method that receives a comment as an argument and removes it from the state.
+    let list = this.state.comments;
+    list = list.filter(c => c !== comment);
+    this.setState({ comments: list });
+  }
+
   InputHandler = event => { // Every time the input changes, the state is updated.
     const { name, value } = event.target;
     this.setState({ newComment: { ...this.state.newComment, [name]: value } })
@@ -54,7 +60,8 @@ class App extends Component {
             key={index}
             name={comment.name}
             email={comment.email}
-            date={comment.date}>
+            date={comment.date}
+            onRemove={this.removeComment.bind(this, comment)}>
             {comment.message}
           </Comment>
         ))}
