@@ -1,9 +1,13 @@
 import React from "react";
 import "./Comment.css";
-const Comment = () => (
+
+
+const Comment = props => (
     <div className="Comment">
-        <div>John:</div>   
-        <div>Hello, I'm a component!</div>
+        <h2>{props.name}</h2>
+        <p>{props.email}</p>   
+        <p>{props.children}</p>
+        <p>{props.date.toString()}</p>
     </div>
 );
 
