@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>React App</h1>
+        <h1>React app - Comments</h1>
 
         {this.state.comments.map((comment, index) => (
           <Comment
@@ -66,13 +66,14 @@ class App extends Component {
           </Comment>
         ))}
 
-        <form method='post' onSubmit={this.addComment}>
+        <form method='post' onSubmit={this.addComment} className="New-Comment">
           <h2>Add a comment</h2>
           <div>
             <input
               type='text'
               name='name'
               onChange={this.InputHandler}  // Every time the input changes, the state is updated.
+              required
               value={this.state.newComment.name}
               placeholder='Name' />
           </div>
@@ -82,6 +83,7 @@ class App extends Component {
               name='email'
               onChange={this.InputHandler}  // Every time the input changes, the state is updated.
               value={this.state.newComment.email}
+              required
               placeholder='Email' />
           </div>
           <div>
@@ -89,7 +91,8 @@ class App extends Component {
               name='message'
               onChange={this.InputHandler}  // Every time the input changes, the state is updated.
               value={this.state.newComment.message}
-              rows="4">
+              rows="4"
+              required>
             </textarea>
           </div>
           <button type='submit'>Comment</button>
