@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import Comment from './components/Comment';
 
@@ -10,13 +10,13 @@ class App extends Component {
       {
         name: "John",
         email: "john@mail.com",
-        date: new Date(2024, 4, 2),
+        date: new Date(2023, 4, 2, 17, 30, 0),
         message: "Hello, how are you?"
       },
       {
         name: "Peter",
         email: "peter@mail.com",
-        date: new Date(2024, 4, 3),
+        date: new Date(2023, 4, 3, 15, 10, 0),
         message: "Hello, I'm fine, thank you!"
       }
     ],
