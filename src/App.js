@@ -22,6 +22,21 @@ class App extends Component {
     ]
   }
 
+  addComment = () => {
+    console.log("Adding comment...");
+
+    const newComment = {
+      name: "Mary",
+      email: "mary@mail.com",
+      date: new Date(),
+      message: "Hello, I'm Mary!"
+  }
+  
+    this.setState({
+      comments: [...this.state.comments, newComment] // Spread operator to add new item in the existing array.
+    });
+}
+
   render() {
     return (
       <div className="App">
@@ -36,6 +51,9 @@ class App extends Component {
             {comment.message}
           </Comment>
         ))}
+
+
+        <button onClick={this.addComment}>Add comment</button>
       </div>
     );
   }
